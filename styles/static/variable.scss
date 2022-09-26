@@ -1,0 +1,13 @@
+$font-family: '';
+$font-weight: 400;
+$font-size: 14px;
+$line-height: 16px;
+
+:root {
+  --msw: 1248px;
+  --mainPadding: 16px;
+
+  @media screen and (min-width: 1280px) {
+    --mainPadding: 24px;
+  }
+}

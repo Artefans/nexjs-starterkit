@@ -1,0 +1,38 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "formatter": "stylelint-checkstyle-formatter",
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "ignoreFiles": [
+    "node_modules/**",
+    ".next/**",
+    "**/*.{ts,js,jsx,tsx}"
+  ],
+  "rules": {
+    "indentation": 2,
+    "string-quotes": "single",
+    "no-duplicate-selectors": true,
+    "selector-attribute-quotes": "always",
+    "selector-attribute-operator-space-before": "never",
+    "selector-attribute-operator-space-after": "never",
+    "selector-attribute-brackets-space-inside": "never",
+    "declaration-block-no-redundant-longhand-properties": null,
+    "declaration-block-trailing-semicolon": "always",
+    "declaration-colon-space-before": "never",
+    "declaration-colon-space-after": "always",
+    "number-leading-zero": "never",
+    "selector-pseudo-element-colon-notation": "single",
+    "media-feature-range-operator-space-before": "always",
+    "media-feature-range-operator-space-after": "always",
+    "media-feature-colon-space-after": "always",
+    "comment-whitespace-inside": "never",
+    "custom-property-pattern": ".",
+    "no-descending-specificity": null,
+    "selector-class-pattern": ".",
+    "block-no-empty": null,
+    "scss/at-mixin-pattern": null,
+    "max-line-length": null,
+    "length-zero-no-unit": null
+  }
+}

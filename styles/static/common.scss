@@ -1,0 +1,56 @@
+// normalize
+@import './normalize';
+
+// reset
+@import './reset';
+
+// variable
+@import './variable';
+
+// fonts
+@import './fonts';
+
+// mixins
+@import './mixins';
+
+/*styles*/
+html {
+  overflow-x: hidden;
+
+  &.overflow {
+    height: auto;
+    position: relative;
+    overflow: hidden !important;
+
+    body {
+      height: auto;
+      position: relative;
+      overflow: hidden !important;
+    }
+  }
+}
+
+body {
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  background-color: var(--primaryWhite);
+  line-height: $line-height;
+  color: var(--primaryBlack);
+  min-width: 320px;
+  margin: auto;
+}
+
+input,
+button,
+textarea {
+  font-family: $font-family;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: var(--msw);
+  display: block;
+  margin: 0 auto;
+  padding: 0 var(--mainPadding);
+}

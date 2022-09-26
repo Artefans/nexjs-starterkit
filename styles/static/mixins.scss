@@ -1,0 +1,100 @@
+// types
+$sm-mobile: 374px;
+$norm-mobile: 479px;
+$min-mobile: 480px;
+$tab: 767px;
+$min-tablet: 768px;
+$mob: 1023px;
+$desktop: 1024px;
+$sm-desktop: 1279px;
+$min-normal: 1280px;
+
+// -----
+@mixin response($size) {
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin response-min($size) {
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin response-range($min, $max) {
+  @media only screen and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin desktop-hover() {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin desktop-properties() {
+  @media only screen and (min-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin hidenScrollBar() {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+
+  &::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    display: none !important;
+    background-color: transparent;
+  }
+}
+
+@mixin lineClamp($lines) {
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  /*stylelint-disable*/
+
+  display: -webkit-box;
+}
+
+@mixin absolute100 {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+@mixin scrollbar($width,$radius,$trackColor,$thumbColor) {
+  &::-webkit-scrollbar {
+    width: $width;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $trackColor;
+    border-radius: $radius;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: $radius;
+    background: $thumbColor;
+  }
+}
+
+@mixin textOverflow($overflow: ellipsis) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: $overflow;
+}

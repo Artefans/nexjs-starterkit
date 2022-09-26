@@ -1,0 +1,58 @@
+{
+  "name": "azer-connect-web-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint:style": "stylelint **/*.{scss,css}",
+    "lint:style:fix": "stylelint **/*.scss --fix",
+    "lint": "eslint \"./**/*.{ts,tsx,js,jsx}\"",
+    "lint:fix": "eslint \"./**/*.{ts,tsx,js,jsx}\" --fix --color",
+    "svg": "npx @svgr/cli -d components/SvgComponents/ assets/svg/"
+  },
+  "dependencies": {
+    "classnames": "^2.3.1",
+    "next": "12.1.6",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "sass": "^1.52.1"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.39",
+    "@types/react": "^18.0.10",
+    "@types/react-dom": "^18.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "eslint": "8.0.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-next": "12.1.6",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^12.4.2",
+    "prettier": "^2.6.2",
+    "stylelint": "^14.8.5",
+    "stylelint-checkstyle-formatter": "^0.1.2",
+    "stylelint-config-standard-scss": "^4.0.0",
+    "stylelint-scss": "^4.2.0",
+    "typescript": "^4.7.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "npm run lint:fix",
+      "prettier --write",
+      "git add ."
+    ],
+    "**/*.{css,scss,sass,less}": [
+      "npm run lint:style:fix",
+      "git add ."
+    ]
+  }
+}
